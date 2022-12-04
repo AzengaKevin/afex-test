@@ -13,7 +13,7 @@ import Navbar from '../../Shared/Navbar.vue';
         <div class="container py-4">
             <h1>Services</h1>
             <ul>
-                <li v-for="service in services" :key="service">{{ service }}</li>
+                <li v-for="{id, name} in services" :key="id">{{ name }}</li>
             </ul>
         </div>
     </main>

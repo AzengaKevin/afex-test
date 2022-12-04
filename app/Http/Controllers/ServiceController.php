@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Inertia\Inertia;
 
 class ServiceController extends Controller
@@ -14,12 +15,7 @@ class ServiceController extends Controller
     public function index()
     {
         return Inertia::render("Services/Index", [
-            'services' => [
-                'Transportation',
-                'Tracking & Tracing',
-                'Delivery',
-                'Communication'
-            ]
+            'services' => Service::all(['id', 'name'])
         ]);
     }
 }
